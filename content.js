@@ -130,7 +130,7 @@ async function updateCardOnPage(design) {
 
   const downloadPoints = calculatePoints(design.downloadCount, design.printCount);
   const printProfilePoints = calculatePrintProfileScore(design);
-  const totalPoints = downloadPoints + printProfilePoints + design.boostInfo.total;
+  const totalPoints = downloadPoints + printProfilePoints + design.boostInfo.total*12;
   const dollarValue = ((totalPoints / points) * rate).toFixed(2);
   const totalDownloads = design.downloadCount + design.printCount * 2;
 
