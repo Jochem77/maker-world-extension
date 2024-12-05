@@ -19,7 +19,6 @@ function calculatePoints(downloadCount, printCount) {
   } else {
     points += 5 * 15 + 18 * 12 + 10 * 20 + Math.floor((totalDownloads - 1000) / 100) * 30;
   }
-
   return points;
 }
 
@@ -131,7 +130,7 @@ async function updateCardOnPage(design) {
 
   const downloadPoints = calculatePoints(design.downloadCount, design.printCount);
   const printProfilePoints = calculatePrintProfileScore(design);
-  const totalPoints = downloadPoints + printProfilePoints;
+  const totalPoints = downloadPoints + printProfilePoints + design.boostInfo.total;
   const dollarValue = ((totalPoints / points) * rate).toFixed(2);
   const totalDownloads = design.downloadCount + design.printCount * 2;
 
@@ -221,11 +220,11 @@ async function updateCardOnPage(design) {
       const downloadRewardsElement = createStyledElementWithIcon(
         'icons/download.svg',
         'fa-download-class',
-        'Download Rewards',
+        'Download Rewardis',
         downloadPoints,
         'points'
       );
-      downloadRewardsElement.style.justifySelf = 'start';
+      downloadElement.style.justifySelf = 'start';
 
       const printProfileRewardsElement = createStyledElementWithIcon(
         'icons/print.svg',
@@ -505,7 +504,7 @@ function handleModelPage(modelId, lang) {
       if (modelData && modelData.id.toString() === modelId) {
         const downloadPoints = calculatePoints(modelData.downloadCount, modelData.printCount);
         const printProfilePoints = calculatePrintProfileScore(modelData);
-        const totalPoints = downloadPoints + printProfilePoints;
+        const totalPoints = downloadPoints + printProfilePoints + modelData.boostInfo.total*12;
         const selectedRegion = await getStoredRegion();
         const { points, rate, symbol } = getConversionRate(selectedRegion);
 
@@ -522,7 +521,7 @@ function handleModelPage(modelId, lang) {
           const downloadRewardsElement = createStyledElementWithIcon(
             'icons/download.svg',
             'fa-download-class',
-            'Download Rewards',
+            'Download Rewardiis',
             downloadPoints,
             'points'
           );
