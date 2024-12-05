@@ -220,7 +220,7 @@ async function updateCardOnPage(design) {
       const downloadRewardsElement = createStyledElementWithIcon(
         'icons/download.svg',
         'fa-download-class',
-        'Download Rewardis',
+        'Download Rewards',
         downloadPoints,
         'points'
       );
@@ -521,7 +521,7 @@ function handleModelPage(modelId, lang) {
           const downloadRewardsElement = createStyledElementWithIcon(
             'icons/download.svg',
             'fa-download-class',
-            'Download Rewardiis',
+            'Download Rewards',
             downloadPoints,
             'points'
           );
