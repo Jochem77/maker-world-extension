@@ -3,6 +3,7 @@ function getHandleFromURL() {
   const url = window.location.href;
   const match = url.match(/@(\w+)/);
   return match ? match[1] : null;
+  
 }
 
 // Calculates the reward points based on download and print counts
